@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Main
+{% endblock %}
+
+{% block body %}
+	{% block header %}{% endblock %}
+	<main class="mt-[20vh]">
+		<a href="{{ path("app_jeux") }}">jouer</a>
+	</main>
+	{% block footer %}{% endblock %}
+{% endblock %}
