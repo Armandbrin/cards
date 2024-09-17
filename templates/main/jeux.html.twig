@@ -1,43 +1,13 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Main
 {% endblock %}
 
 {% block body %}
-	<main class="flex flex-col items-center"></main>
-	<section class="flex gap-5 m-2 justify-center border-2 border-black rounded-lg py-2 bg-[#2F2323]">
-		<img src="" id="card1" class="w-24 h-auto" alt="">
-		<img src="" id="card2" class="w-24 h-auto" alt="">
-		<img src="" id="card3" class="w-24 h-auto" alt="">
-		<img src="" id="card4" class="w-24 h-auto" alt="">
-		<img src="" id="card5" class="w-24 h-auto" alt="">
-	</section>
-	<section class="grid grid-rows-2 grid-flow-col gap-3 justify-center">
-		<article class="border-2 border-black rounded-lg w-24 h-[30vh] bg-[#600000]">
-        
-        </article>
-		<article class="border-2 border-black rounded-lg w-24 h-[30vh] bg-[#004374]">
-        
-        </article>
-		<article class="border-2 border-black rounded-lg w-24 h-[30vh] bg-[#600000]">
-        
-        </article>
-		<article class="border-2 border-black rounded-lg w-24 h-[30vh] bg-[#004374]">
-        
-        </article>
-		<article class="border-2 border-black rounded-lg w-24 h-[30vh] bg-[#600000]">
-        
-        </article>
-		<article class="border-2 border-black rounded-lg w-24 h-[30vh] bg-[#004374]">
-        
-        </article>
-	</section>
-	<section class="flex gap-5 m-2 justify-center border-2 border-black rounded-lg py-2 bg-[#2F2323]">
-		<img src="" id="card6" class="w-24 h-auto" alt="">
-		<img src="" id="card7" class="w-24 h-auto" alt="">
-		<img src="" id="card8" class="w-24 h-auto" alt="">
-		<img src="" id="card9" class="w-24 h-auto" alt="">
-		<img src="" id="card10" class="w-24 h-auto" alt="">
-	</section>
-	<script src="{{ asset("./cards.js")}}"></script>
+	{% block header %}{% endblock %}
+	<main class="mt-[20vh]">
+		<a href="{{ path("app_jeux") }}">jouer</a>
+	</main>
+	{% block footer %}{% endblock %}
 {% endblock %}

@@ -48,3 +48,4 @@ fetch("./card.json", {
         test = Math.floor(Math.random() * data.length)
         card10.src = data[test].image_url
     })
+    .catch(error => console.log(error))
