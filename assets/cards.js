@@ -1,14 +1,6 @@
 let data = []
-let card1 = document.getElementById("card1")
-let card2 = document.getElementById("card2")
-let card3 = document.getElementById("card3")
-let card4 = document.getElementById("card4")
-let card5 = document.getElementById("card5")
-let card6 = document.getElementById("card6")
-let card7 = document.getElementById("card7")
-let card8 = document.getElementById("card8")
-let card9 = document.getElementById("card9")
-let card10 = document.getElementById("card10")
+let opposant = document.getElementById("opposant")
+let joueur = document.getElementById("joueur")
 fetch("./card.json", {
     headers: {
         'Content-Type': 'application/json'
@@ -27,25 +19,37 @@ fetch("./card.json", {
                 image_url: rep[i].printings[0].image_url,
             })
         }
-        let test = Math.floor(Math.random() * data.length)
-        card1.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card2.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card3.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card4.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card5.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card6.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card7.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card8.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card9.src = data[test].image_url
-        test = Math.floor(Math.random() * data.length)
-        card10.src = data[test].image_url
+
+        for (let i = 0; i < 5; i++) {
+            let hasard = Math.floor(Math.random() * data.length)
+            let cartes_opposant = document.createElement("img")
+            cartes_opposant.classList.add("zoom_opponant")
+            cartes_opposant.src = data[hasard].image_url
+            if (cartes_opposant.src == "https://127.0.0.1:8000/null") {
+                let hasard3 = Math.floor(hasard + 3)
+                cartes_opposant.src = data[hasard3].image_url
+                opposant.appendChild(cartes_opposant)
+            } else {
+                opposant.appendChild(cartes_opposant)
+            }
+
+        }
+
+        for (let i = 0; i < 5; i++) {
+            let hasard = Math.floor(Math.random() * data.length)
+            let cartes_joueur = document.createElement("img")
+            cartes_joueur.classList.add("zoom_joueur")
+            cartes_joueur.src = data[hasard].image_url
+            if (cartes_joueur.src == "https://127.0.0.1:8000/null") {
+                let hasard3 = Math.floor(hasard + 3)
+                cartes_joueur.src = data[hasard3].image_url
+                joueur.appendChild(cartes_joueur)
+            } else {
+                joueur.appendChild(cartes_joueur)
+            }
+
+        }
+
+
     })
     .catch(error => console.log(error))

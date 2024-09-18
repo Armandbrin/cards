@@ -2,15 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-.zoom {
+.zoom_opponant {
     transition: transform .2s;
     /* Animation */
-    width: 10vw;
+    width: 9vw;
     height: auto;
-    margin: 0 auto;
+    margin: 1px;
+    rotate: 180deg;
 }
 
-.zoom:hover {
-    transform: scale(1.5);
+.zoom_opponant:hover {
+    transform: scale(1.1) translate(0px, -15%);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.zoom_joueur {
+    transition: transform .2s;
+    /* Animation */
+    width: 9vw;
+    height: auto;
+    margin: 1px;
+}
+
+.zoom_joueur:hover {
+    transform: scale(1.1) translate(0px, -15%);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+span {
+    font-size: 8px;
+    color: white;
+}
+
+article {
+    /* border: 2px solid;
+    border-color: black; */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 75px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
